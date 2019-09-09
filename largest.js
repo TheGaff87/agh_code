@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 function nextLargest(num) {
   let result = 0;
   /*found this method of turning number into array of digits using ES6 methods on Stack Overflow; better than using parseInt(), split(), join(), toString()*/
@@ -28,3 +30,16 @@ function nextLargest(num) {
   }
   return false;
 }
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('Please enter an argument (integer) for nextLargest function ', (answer) => {
+    console.log(nextLargest(answer));
+
+  rl.close();
+});
